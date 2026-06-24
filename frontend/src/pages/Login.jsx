@@ -49,8 +49,8 @@ function Login(){
             <div className="logincard">
                 <h1 className='h1login'>Login</h1>
                 <div className="inputs">
-                    <input ref={email} type="text" placeholder="Email"/>
-                    <input ref={password} type="password" placeholder="Password" />
+                    <input className='loginput' ref={email} type="text" placeholder="Email"/>
+                    <input className='loginput' ref={password} type="password" placeholder="Password" />
                     <button className='regbutton' onClick={loginAction}>Login</button>
                     <div>
                         <p>Didn't have an account?</p>

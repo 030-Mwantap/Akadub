@@ -64,6 +64,7 @@ export default function Post() {
                     </h2>
                     <div>
                         <DatePicker
+                            className="datepicker"
                             selectsRange={true}
                             startDate={startDate}
                             endDate={endDate}

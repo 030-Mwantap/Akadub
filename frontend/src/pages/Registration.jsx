@@ -44,9 +44,9 @@ function Registration(){
             <div className="regiscard">
                 <h1 className='h1regist'>Register</h1>
                 <div className="inputs">
-                    <input ref={username} type="text" placeholder="username"/>
-                    <input ref={email} type="text" placeholder="email"/>
-                    <input ref={password} type="password" placeholder="password"/>
+                    <input className='reginput' ref={username} type="text" placeholder="username"/>
+                    <input className='reginput' ref={email} type="text" placeholder="email"/>
+                    <input className='reginput' ref={password} type="password" placeholder="password"/>
                     <button className='regbutton' onClick={signupAction}>Sign up</button>
                     <div>
                         <p>Already have an account?</p>

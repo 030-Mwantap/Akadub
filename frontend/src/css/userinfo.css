@@ -3,3 +3,11 @@
     margin-left: 12rem;
     color: white;
 }
+
+.userinfosearch {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    height: 1rem;
+    width: 15rem;
+}

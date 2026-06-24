@@ -63,7 +63,6 @@ export default function UserProfile() {
                     </div>
                     <div className="navigation">
                         <Link className="navlink" to={`/user/${userId}`}>User Info</Link>
-                        <Link className="navlink" to={`/user/${userId}/settings`}>Settings</Link>
                         <Link className="navlink" to={`/user/${userId}/post`}>Post</Link>
                     </div>
                     <Link className="logout" to="/">Back</Link>

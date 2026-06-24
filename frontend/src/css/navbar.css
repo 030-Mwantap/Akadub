@@ -13,16 +13,13 @@ nav {
     z-index: 1000;
 }
 
-input {
+.usersearch {
+    margin-left: 10rem;
     padding: 10px;
     border-radius: 10px;
     border: none;
     height: 1rem;
     width: 15rem;
-}
-
-.usersearch {
-    margin-left: 10rem;
 }
 
 .akadub {

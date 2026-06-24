@@ -41,6 +41,14 @@ a {
     color: white;
 }
 
+.reginput {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    height: 1rem;
+    width: 15rem;
+}
+
 .regbutton {
     border: none;
     border-radius: 5px;

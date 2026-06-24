@@ -12,6 +12,14 @@
     width: 100%;
 }
 
+.datepicker {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    height: 1rem;
+    width: 15rem;
+}
+
 .postresults {
     color: lightblue;
 }
