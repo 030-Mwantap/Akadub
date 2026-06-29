@@ -16,7 +16,7 @@ export default function UserInfo() {
     return (
         <>
             <nav className="userprofilenav">
-                <input type="text" placeholder="Search" />
+                <input className="userinfosearch" type="text" placeholder="Search" />
             </nav>
             <div className="userinfo">
                 <h1>User Info</h1>

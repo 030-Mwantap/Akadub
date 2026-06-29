@@ -19,6 +19,14 @@
     box-shadow: 0px 0px 50px black;
 }
 
+.loginput {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    height: 1rem;
+    width: 15rem;
+}
+
 .h1login {
     padding-bottom: 4rem;
 }
