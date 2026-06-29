@@ -15,15 +15,17 @@ const getUserProjectByUserID = `-- name: GetUserProjectByUserID :many
 SELECT 
 id, -- Will generate ` + "`" + `json:"id"` + "`" + `
 title, -- Will generate ` + "`" + `json:"title"` + "`" + `
+description, -- Will generate ` + "`" + `json:"description"` + "`" + `
 created_at -- Will generate ` + "`" + `json:"created_at"` + "`" + `
 FROM projects_todo_list
 WHERE user_id = $1
 `
 
 type GetUserProjectByUserIDRow struct {
-	ID        int32     `json:"id"`
-	Title     string    `json:"title"`
-	CreatedAt time.Time `json:"created_at"`
+	ID          int32     `json:"id"`
+	Title       string    `json:"title"`
+	Description string    `json:"description"`
+	CreatedAt   time.Time `json:"created_at"`
 }
 
 func (q *Queries) GetUserProjectByUserID(ctx context.Context, userID int32) ([]GetUserProjectByUserIDRow, error) {
@@ -35,7 +37,12 @@ func (q *Queries) GetUserProjectByUserID(ctx context.Context, userID int32) ([]G
 	var items []GetUserProjectByUserIDRow
 	for rows.Next() {
 		var i GetUserProjectByUserIDRow
-		if err := rows.Scan(&i.ID, &i.Title, &i.CreatedAt); err != nil {
+		if err := rows.Scan(
+			&i.ID,
+			&i.Title,
+			&i.Description,
+			&i.CreatedAt,
+		); err != nil {
 			return nil, err
 		}
 		items = append(items, i)

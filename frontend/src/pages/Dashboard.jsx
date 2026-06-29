@@ -58,32 +58,6 @@ function Dashboard() {
         })();
     }, [accessToken, setUser, user]);
 
-    // useEffect(() => {
-    //     if (!user || !accessToken) return;
-
-    //     setPostsLoading(true);
-
-    //     (async () => {
-    //         try {
-    //             const response = await fetch("/api/user/posts", {
-    //                 headers: {
-    //                     Authorization: accessToken,
-    //                 },
-    //             });
-
-    //             if (!response.ok) {
-    //                 throw new Error("Could not load your posts.");
-    //             }
-
-    //             const data = await response.json();
-    //             setUserPosts(data.posts || []);
-    //         } catch (err) {
-    //             console.error(err);
-    //         } finally {
-    //             setPostsLoading(false);
-    //         }
-    //     })();
-    // }, [accessToken, user]);
 
     useEffect(() => {
         if (!user || !accessToken) return;
@@ -135,7 +109,9 @@ function Dashboard() {
     if (error) return <Error errormessage={error} />;
     if (!user) return <Error errormessage="User data is not available." />;
 
-    return (
+    todoProjects.forEach(el => console.log(el))
+
+    return (    
         <div className="dashboard-body">
             <div className="dashboard-card">
                 <div className="dashboard-card__header">
