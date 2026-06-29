@@ -1,7 +1,6 @@
 import "../css/posts.css"
 
 export default function Posts({ id,username, title,content, date }) {
-    console.log(username)
     return (
         <>
             <div key={id} className="posts">

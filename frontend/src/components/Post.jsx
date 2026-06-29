@@ -28,6 +28,8 @@ export default function Post() {
                 const start = startDate ?? new Date();
                 const end = endDate ?? new Date(Date.now() + 6 * 86400000);  
 
+                console.log(start)
+
                 if (start) params.append('start_date', start.toISOString().split("T")[0]);
                 if (end) params.append('end_date', end.toISOString().split("T")[0]);
 

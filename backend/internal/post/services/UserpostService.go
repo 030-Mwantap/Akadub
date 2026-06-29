@@ -32,8 +32,8 @@ func (service *UserpostService) GetPost(ctx context.Context, UserID int32, Start
 
 	Posts, err := service.repo.GetPostByUserID(ctx, db.GetPostByUserIDParams{
 		UserID: UserID,
-		CreatedAt: StartTime,
-		CreatedAt_2: EndTime,
+		CreatedAt: StartTime.UTC(),
+		CreatedAt_2: EndTime.UTC(),
 	})
 	if err != nil{
 		log.Println(err.Error())

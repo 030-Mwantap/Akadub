@@ -15,7 +15,8 @@ SELECT
 user_id, -- Will generate ` + "`" + `json:"user_id"` + "`" + `
 title, -- Will generate ` + "`" + `json:"title"` + "`" + `
 content -- Will generate ` + "`" + `json:"content"` + "`" + `
-username -- Will generate ` + "`" + `json:"username"` + "`" + `
+username, -- Will generate ` + "`" + `json:"username"` + "`" + `
+created_at -- Will generate ` + "`" + `json:"created_at"` + "`" + `
 FROM text_posts
 WHERE user_id = $1
 AND created_at BETWEEN $2 AND $3
@@ -28,9 +29,10 @@ type GetPostByUserIDParams struct {
 }
 
 type GetPostByUserIDRow struct {
-	UserID   int32  `json:"user_id"`
-	Title    string `json:"title"`
-	Username string `json:"username"`
+	UserID    int32     `json:"user_id"`
+	Title     string    `json:"title"`
+	Username  string    `json:"username"`
+	CreatedAt time.Time `json:"created_at"`
 }
 
 func (q *Queries) GetPostByUserID(ctx context.Context, arg GetPostByUserIDParams) ([]GetPostByUserIDRow, error) {
@@ -42,7 +44,12 @@ func (q *Queries) GetPostByUserID(ctx context.Context, arg GetPostByUserIDParams
 	var items []GetPostByUserIDRow
 	for rows.Next() {
 		var i GetPostByUserIDRow
-		if err := rows.Scan(&i.UserID, &i.Title, &i.Username); err != nil {
+		if err := rows.Scan(
+			&i.UserID,
+			&i.Title,
+			&i.Username,
+			&i.CreatedAt,
+		); err != nil {
 			return nil, err
 		}
 		items = append(items, i)

@@ -109,8 +109,6 @@ function Dashboard() {
     if (error) return <Error errormessage={error} />;
     if (!user) return <Error errormessage="User data is not available." />;
 
-    todoProjects.forEach(el => console.log(el))
-
     return (    
         <div className="dashboard-body">
             <div className="dashboard-card">
